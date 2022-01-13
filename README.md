@@ -7,12 +7,12 @@ Take the time to expand your **libft** throughout the year. However, when workin
 
 ## Commands
 
-`make` - create library without bonus files
-`make bonus` - create library with bonus files
-`make clean` - delete object files
-`make fclean` - delete object and binary files
-`make re` - delete object, binary files, and create library without bonus files
-`make re bonus` - delete object, binary files, and create library with bonus files
+- `make` - create library without bonus files
+- `make bonus` - create library with bonus files
+- `make clean` - delete object files
+- `make fclean` - delete object and binary files
+- `make re` - delete object, binary files, and create library without bonus files
+- `make re bonus` - delete object, binary files, and create library with bonus files
 
 ## Author
 
