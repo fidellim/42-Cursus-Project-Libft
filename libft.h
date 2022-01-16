@@ -6,7 +6,7 @@
 /*   By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 15:21:42 by flim              #+#    #+#             */
-/*   Updated: 2022/01/16 13:12:41 by flim             ###   ########.fr       */
+/*   Updated: 2022/01/16 19:43:06 by flim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
-/*****PART1*****/
+/*
+** Part 1 - Libc Functions
+*/
 int		ft_isalpha(int alpha);
 int		ft_isdigit(int num);
 int		ft_isalnum(int alnum);
@@ -46,7 +48,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
-/*****PART2*****/
+/*
+** Part 2 - Additional Functions
+*/
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
@@ -58,7 +62,9 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-/*****BONUS*****/
+/*
+** Bonus Part
+*/
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
