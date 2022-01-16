@@ -6,7 +6,7 @@
 /*   By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 15:53:48 by flim              #+#    #+#             */
-/*   Updated: 2022/01/11 02:48:45 by flim             ###   ########.fr       */
+/*   Updated: 2022/01/15 17:53:15 by flim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,5 +17,5 @@ void	ft_bzero(void *s, size_t n)
 
 	i = 0;
 	while (i < n)
-		((char *)s)[i++] = 0;
+		((unsigned char *)s)[i++] = 0;
 }
