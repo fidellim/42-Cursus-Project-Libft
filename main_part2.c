@@ -6,7 +6,7 @@
 /*   By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 19:18:35 by flim              #+#    #+#             */
-/*   Updated: 2022/01/13 22:55:55 by flim             ###   ########.fr       */
+/*   Updated: 2022/01/16 15:29:41 by flim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,7 +14,10 @@
 
 int main(void)
 {
-	char *trim = "lorem ipsum dolor sit amet";
+	char	*trim = "lorem ipsum dolor sit amet";
+	FILE	*fileptr;
+	char	txtfile[150];	
+	//fileno will convert FILE pointer to file descriptor
 
 	printf("--------------------------\n");
 	printf("1) ft_substr\n");
@@ -43,6 +46,110 @@ int main(void)
 	printf("Set: lorem || Trimmed: %s\n", ft_strtrim(trim, "lorem"));
 	printf("Set: tel || Trimmed: %s\n", ft_strtrim(trim, "tel"));
 	printf("--------------------------\n");
+	printf("--------------------------\n");
+	printf("4) ft_split\n");
+	printf("--------------------------\n");
+	printf("--------------------------\n");
+	printf("5) ft_itoa\n");
+	printf("--------------------------\n");
+	printf("--------------------------\n");
+	printf("6) ft_strmapi\n");
+	printf("--------------------------\n");
+	printf("--------------------------\n");
+	printf("7) ft_striteri\n");
+	printf("--------------------------\n");
+	printf("--------------------------\n");
+	printf("8) ft_putchar_fd\n");
+	printf("File Name: %s\n", "test.txt");
+	printf("Content/s of %s\n", "test.txt");
+	fileptr = fopen("./testfile/test.txt", "w");
+	if (fileptr)
+	{
+		ft_putchar_fd('a', fileno(fileptr));
+		fclose(fileptr);
+	}
+	fileptr = fopen("./testfile/test.txt", "r");
+	if (fileptr)
+	{
+		while (!feof(fileptr))
+		{
+			fgets(txtfile, 150, fileptr);
+			puts(txtfile);
+		}
+		fclose(fileptr);
+	}
+	printf("--------------------------\n");
+	printf("--------------------------\n");
+	printf("9) ft_putstr_fd\n");
+	printf("File Name: %s\n", "test2.txt");
+	printf("Content/s of %s\n", "test2.txt");
+	fileptr = fopen("./testfile/test2.txt", "w");
+	if (fileptr)
+	{
+		ft_putstr_fd("..this is fidel.", fileno(fileptr));
+		ft_putstr_fd("this is the continuation...", fileno(fileptr));
+		fclose(fileptr);
+	}
+	fileptr = fopen("./testfile/test2.txt", "r");
+	if (fileptr)
+	{
+		while (!feof(fileptr))
+		{
+			fgets(txtfile, 150, fileptr);
+			puts(txtfile);
+		}
+		fclose(fileptr);
+	}
+	printf("--------------------------\n");
+	printf("--------------------------\n");
+	printf("10) ft_putendl_fd\n");
+	printf("File Name: %s\n", "test3.txt");
+	printf("Content/s of %s\n", "test3.txt");
+	fileptr = fopen("./testfile/test3.txt", "w");
+	if (fileptr)
+	{
+		ft_putendl_fd("this is fidel", fileno(fileptr));
+		fclose(fileptr);
+	}
+	fileptr = fopen("./testfile/test3.txt", "w");
+	if (fileptr)
+	{
+		ft_putendl_fd("this is test3...", fileno(fileptr));
+		ft_putendl_fd("secondline", fileno(fileptr));
+		ft_putendl_fd("this is test3 thirdline...", fileno(fileptr));
+		fclose(fileptr);
+	}
+	fileptr = fopen("./testfile/test3.txt", "r");
+	if (fileptr)
+	{
+		while (!feof(fileptr))
+		{
+			if (fgets(txtfile, 150, fileptr))
+				printf("%s", txtfile);
+		}
+		fclose(fileptr);
+	}
+	printf("--------------------------\n");
+	printf("--------------------------\n");
+	printf("11) ft_putnbr_fd\n");
+	printf("File Name: %s\n", "test4.txt");
+	printf("Content/s of %s\n", "test4.txt");
+	fileptr = fopen("./testfile/test4.txt", "w");
+	if (fileptr)
+	{
+		ft_putnbr_fd(42, fileno(fileptr));
+		fclose(fileptr);
+	}
+	fileptr = fopen("./testfile/test4.txt", "r");
+	if (fileptr)
+	{
+		while (!feof(fileptr))
+		{
+			fgets(txtfile, 150, fileptr);
+			puts(txtfile);
+		}
+		fclose(fileptr);
+	}
+	printf("--------------------------\n");
 	return (0);
 }
-
