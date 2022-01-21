@@ -6,7 +6,7 @@
 #    By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 15:56:08 by flim              #+#    #+#              #
-#    Updated: 2022/01/09 20:49:25 by flim             ###   ########.fr        #
+#    Updated: 2022/01/17 20:30:52 by flim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,10 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_putnbr_fd.c
 OBJS = $(SRCS:.c=.o)
 
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+BONUS_OBJS = $(BONUS:.c=.o)
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -45,4 +49,9 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONY = all clean fclean re
+bonus: $(OBJS) $(BONUS_OBJS)
+	$(LIB) $(NAME) $(OBJS) $(BONUS_OBJS)
+
+rebonus: fclean bonus
+
+.PHONY = all clean fclean re bonus rebonus
