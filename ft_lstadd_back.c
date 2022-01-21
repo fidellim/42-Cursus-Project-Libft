@@ -6,13 +6,17 @@
 /*   By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 17:50:26 by flim              #+#    #+#             */
-/*   Updated: 2022/01/16 15:45:58 by flim             ###   ########.fr       */
+/*   Updated: 2022/01/19 21:25:34 by flim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-/*
+
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-
+	if (!new)
+		return ;
+	if (*lst)
+		ft_lstlast(*lst)->next = new;
+	else
+		*lst = new;
 }
-*/
