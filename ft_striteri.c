@@ -6,13 +6,21 @@
 /*   By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 16:38:28 by flim              #+#    #+#             */
-/*   Updated: 2022/01/15 16:39:37 by flim             ###   ########.fr       */
+/*   Updated: 2022/01/21 14:33:04 by flim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-/*
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
+	int	n;
 
+	if (!s || !f)
+		return ;
+	n = 0;
+	while (s[n])
+	{
+		(f)(n, &s[n]);
+		n++;
+	}
 }
-*/
