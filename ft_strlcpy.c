@@ -6,7 +6,7 @@
 /*   By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 15:54:31 by flim              #+#    #+#             */
-/*   Updated: 2022/01/12 12:23:35 by flim             ###   ########.fr       */
+/*   Updated: 2022/01/21 19:23:25 by flim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -22,7 +22,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		return (src_len);
 	if (!dst || !src)
 		return (0);
-	while (src[i] && i < dstsize)
+	while (src[i] && i < dstsize - 1)
 	{
 		dst[i] = src[i];
 		i++;
