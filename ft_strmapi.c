@@ -6,7 +6,7 @@
 /*   By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 17:33:54 by flim              #+#    #+#             */
-/*   Updated: 2022/01/21 14:05:52 by flim             ###   ########.fr       */
+/*   Updated: 2022/01/24 19:40:40 by flim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,6 +16,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		n;
 	char	*ptr;
 
+	if (!s || !f)
+		return (NULL);
 	n = 0;
 	ptr = malloc (sizeof(char) * (ft_strlen(s) + 1));
 	if (!ptr)
