@@ -6,11 +6,27 @@
 /*   By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 19:18:35 by flim              #+#    #+#             */
-/*   Updated: 2022/01/16 15:29:41 by flim             ###   ########.fr       */
+/*   Updated: 2022/01/25 13:12:53 by flim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <stdio.h>
+
+char	all_upper(unsigned int i, char c)
+{
+	if (i >= 0)
+		return ((char) ft_toupper(c));
+	else
+		return (c);
+}
+
+void	all_lower(unsigned int i, char *c)
+{
+	if (i >= 0)
+		*c = ft_tolower(*c);
+	else
+		*c = *c;
+}
 
 int main(void)
 {
@@ -51,12 +67,25 @@ int main(void)
 	printf("--------------------------\n");
 	printf("--------------------------\n");
 	printf("5) ft_itoa\n");
+	printf("---INT: %d\n", 55);
+	printf("Answer: %s\n", ft_itoa(55));
+	printf("---INT: %ld\n", -2147483648);
+	printf("Answer: %s\n", ft_itoa(-2147483648));
+	printf("---INT: %d\n", 2147483647);
+	printf("Answer: %s\n", ft_itoa(2147483647));
 	printf("--------------------------\n");
 	printf("--------------------------\n");
 	printf("6) ft_strmapi\n");
+	printf("String: %s\n", "this is 42 campus");
+	printf("UPPERCASE: %s\n", ft_strmapi("this is 42 campus", &all_upper));
 	printf("--------------------------\n");
 	printf("--------------------------\n");
 	printf("7) ft_striteri\n");
+	char	str_iteri_test[50] = "THIS IS 42 CAMPUS";
+	char	*str_iteri_ptr = &str_iteri_test[0];
+	printf("String: %s\n", str_iteri_test);
+	ft_striteri(str_iteri_ptr, &all_lower);
+	printf("LOWERCASE: %s\n", str_iteri_ptr);
 	printf("--------------------------\n");
 	printf("--------------------------\n");
 	printf("8) ft_putchar_fd\n");
