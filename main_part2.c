@@ -6,7 +6,7 @@
 /*   By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 19:18:35 by flim              #+#    #+#             */
-/*   Updated: 2022/01/25 13:12:53 by flim             ###   ########.fr       */
+/*   Updated: 2022/01/26 11:11:51 by flim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -44,6 +44,7 @@ int main(void)
 	printf("Start: %d || Len: %d || Substr: %s\n", 40, 5, ft_substr(trim, 40, 5));
 	printf("Start: %d || Len: %d || Substr: %s\n", 1, 2, ft_substr(trim, 1, 2));
 	printf("Start: %d || Len: %d || Substr: %s\n", 1, 0, ft_substr(trim, 1, 0));
+	printf("Start: %d || Len: %d || Substr: %s\n", 0, 42000, ft_substr("tripouille", 0, 42000));
 	printf("--------------------------\n");
 	printf("--------------------------\n");
 	printf("2) ft_strjoin\n");
@@ -64,6 +65,17 @@ int main(void)
 	printf("--------------------------\n");
 	printf("--------------------------\n");
 	printf("4) ft_split\n");
+	char	**arrs;
+	int		i;
+	printf("String: %s || Delimeter: %s\n", "please split this word", " ");
+	arrs = ft_split("please split this word", ' ');
+	i = 0;
+	while (arrs[i])
+	{
+		printf("%d) String: %s\n", i, arrs[i]);
+		i++;
+	}
+	free(arrs);
 	printf("--------------------------\n");
 	printf("--------------------------\n");
 	printf("5) ft_itoa\n");
