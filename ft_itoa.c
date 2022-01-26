@@ -6,7 +6,7 @@
 /*   By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 17:32:10 by flim              #+#    #+#             */
-/*   Updated: 2022/01/25 11:31:18 by flim             ###   ########.fr       */
+/*   Updated: 2022/01/25 13:15:00 by flim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -31,7 +31,7 @@ static int	n_len(int n)
 
 static int	find_zero(int len)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (len == 1)
