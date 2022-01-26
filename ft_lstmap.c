@@ -6,7 +6,7 @@
 /*   By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 17:55:35 by flim              #+#    #+#             */
-/*   Updated: 2022/01/21 18:12:27 by flim             ###   ########.fr       */
+/*   Updated: 2022/01/26 13:03:42 by flim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,8 +16,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*first_node;
 	t_list	*new_node;
 
-	if (!lst || !f || !del)
-		return (NULL);
 	first_node = NULL;
 	while (lst)
 	{
