@@ -6,7 +6,7 @@
 #    By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 15:56:08 by flim              #+#    #+#              #
-#    Updated: 2022/01/17 20:30:52 by flim             ###   ########.fr        #
+#    Updated: 2022/01/27 14:33:47 by flim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,13 @@ $(NAME): $(OBJS)
 clean:
 	$(RM) $(OBJS)
 
+clean_bonus: clean
+	$(RM) $(BONUS_OBJS)
+
 fclean: clean
+	$(RM) $(NAME)
+
+fclean_bonus: clean_bonus
 	$(RM) $(NAME)
 
 re: fclean $(NAME)
@@ -52,6 +58,6 @@ re: fclean $(NAME)
 bonus: $(OBJS) $(BONUS_OBJS)
 	$(LIB) $(NAME) $(OBJS) $(BONUS_OBJS)
 
-rebonus: fclean bonus
+rebonus: fclean_bonus bonus
 
-.PHONY = all clean fclean re bonus rebonus
+.PHONY = all clean fclean re bonus clean_bonus fclean_bonus rebonus
