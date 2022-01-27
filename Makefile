@@ -6,7 +6,7 @@
 #    By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 15:56:08 by flim              #+#    #+#              #
-#    Updated: 2022/01/27 14:33:47 by flim             ###   ########.fr        #
+#    Updated: 2022/01/27 14:43:56 by flim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,4 +60,4 @@ bonus: $(OBJS) $(BONUS_OBJS)
 
 rebonus: fclean_bonus bonus
 
-.PHONY = all clean fclean re bonus clean_bonus fclean_bonus rebonus
+.PHONY = all bonus clean clean_bonus fclean fclean_bonus re rebonus
