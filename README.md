@@ -23,8 +23,8 @@ Take the time to expand your **libft** throughout the year. However, when workin
 ## Score
 
 - 65 Black Hole days added
-- 125/100 (Included Bonus)
-![Libft Score Image](/images/42_libft_score.jpeg)
+- 125/100 (Included Bonus) <br>
+![Libft Score Image](/images/42_libft_score.jpeg =250x)
 
 ## Author
 
