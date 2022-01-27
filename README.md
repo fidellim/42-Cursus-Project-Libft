@@ -20,6 +20,12 @@ Take the time to expand your **libft** throughout the year. However, when workin
 - [alelievr/libft-unit-test](https://github.com/alelievr/libft-unit-test)
 - [Tripouille/libftTester](https://github.com/Tripouille/libftTester)
 
+## Score
+
+- 65 Black Hole days added
+- 125/100 (Included Bonus)
+![Libft Score Image](/images/42_libft_score.jpeg)
+
 ## Author
 
 - Website - [Fidel Lim](https://fidellim-portfolio.netlify.app/)
