@@ -6,7 +6,7 @@
 #    By: flim <flim@student.42abudhabi.ae>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 15:56:08 by flim              #+#    #+#              #
-#    Updated: 2022/01/27 14:43:56 by flim             ###   ########.fr        #
+#    Updated: 2022/03/02 11:20:51 by flim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,31 +33,51 @@ BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
 		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 BONUS_OBJS = $(BONUS:.c=.o)
 
+# Text Colors
+RESET =  "\033[0m"
+BRIGHT_RED = "\033[31;1m"
+BRIGHT_CYAN = "\033[36;1m"
+BRIGHT_GREEN = "\033[32;1m"
+BRIGHT_MAGENTA = "\033[35;1m"
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(LIB) $(NAME) $(OBJS)
+	@$(LIB) $(NAME) $(OBJS)
+	@echo $(BRIGHT_GREEN)"$(NAME) has been created!"$(RESET)
 
 .c.o:
+	@printf $(BRIGHT_MAGENTA)
 	$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $(<:.c=.o)
 
 clean:
-	$(RM) $(OBJS)
+	@$(RM) $(OBJS)
+	@echo $(BRIGHT_RED)"DELETED FILE/S: $(OBJS)\n"$(RESET)
 
 clean_bonus: clean
-	$(RM) $(BONUS_OBJS)
-
+	@$(RM) $(BONUS_OBJS)
+	@echo $(BRIGHT_RED)"DELETED FILE/S: $(BONUS_OBJS)\n"$(RESET)
+	
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo $(BRIGHT_RED)"DELETED FILE: $(NAME)\n"$(RESET)
 
 fclean_bonus: clean_bonus
 	$(RM) $(NAME)
+	@echo $(BRIGHT_RED)"DELETED FILE: $(NAME)\n"$(RESET)
 
 re: fclean $(NAME)
 
 bonus: $(OBJS) $(BONUS_OBJS)
-	$(LIB) $(NAME) $(OBJS) $(BONUS_OBJS)
+	@$(LIB) $(NAME) $(OBJS) $(BONUS_OBJS)
+	@echo $(BRIGHT_GREEN)"$(NAME) has been created!"$(RESET)
 
 rebonus: fclean_bonus bonus
 
-.PHONY = all bonus clean clean_bonus fclean fclean_bonus re rebonus
+norm:
+	@echo $(BRIGHT_MAGENTA)"LIBFT .c file/s"$(RESET)
+	@norminette -R CheckForbiddenSourceHeader *.c
+	@echo $(BRIGHT_MAGENTA)"LIBFT .h file/s"$(RESET)
+	@norminette -R CheckDefine *.h
+
+.PHONY = all bonus clean clean_bonus fclean fclean_bonus re rebonus norm
