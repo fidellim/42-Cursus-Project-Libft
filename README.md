@@ -15,6 +15,7 @@ Take the time to expand your **libft** throughout the year. However, when workin
 - `make fclean_bonus` - delete mandatory and bonus object and binary files
 - `make re` - delete mandatory object files, binary files, and create library without bonus files
 - `make rebonus` - delete mandatory and bonus object files, binary files, and create library with bonus files
+- `make norm` - check for norminette error/s
 
 ## Libft Testers
 
